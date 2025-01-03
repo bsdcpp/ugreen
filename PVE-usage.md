@@ -201,11 +201,19 @@ apt install bpftrace && execsnoop.bt
 
 > 常用命令
 
-```
+```bash
 $ intel_gpu_top -d drm:/dev/dri/renderD128
 $ watch -n 1 "cat /proc/cpuinfo | grep MHz"
 $ mpstat -P ALL
 $ apt install --no-install-recommends --no-install-suggests
+
+###
+# 镜像转换
+qm importdisk <vmid> <source> <storage> [OPTIONS]
+#例：qm importdisk 101 vm01-disk001.vmdk local-lvm -format qcow2
+#上面101是虚拟机的VM ID，vm01-disk001.vmdk是解压出来的vmdk文件，local-lvm是你的存储ID， -format qcow2 是指定导入后硬盘镜像的格式，默认是raw格式。
+# 查看容器配置
+$ pct config {id}
 ```
 
 ```bash
